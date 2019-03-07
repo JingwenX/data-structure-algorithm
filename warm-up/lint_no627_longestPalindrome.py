@@ -34,8 +34,12 @@ class Solution:
             else:
                 singles.append(s[i])
             i += 1
-        len_longest_palindrome = len(s) - len(singles) + 1
+        if len(singles) > 0:
+            len_longest_palindrome = len(s) - len(singles) + 1
+        else:
+            len_longest_palindrome = len(s)
         return len_longest_palindrome
 
 # accepted on second submission
 # problem with first submission: used list.index(), which returns value error when encounter no value in list.
+# problem with second submission: if "aaaa", the length calculation is wrong. 
